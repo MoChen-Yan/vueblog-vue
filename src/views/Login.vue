@@ -19,16 +19,15 @@
           </el-form-item>
         </el-form>
       </el-main>
-<!--   footer   -->
-      <el-footer v-if="footer_show"></el-footer>
+
     </el-container>
   </div>
 </template>
 <script>
-/*footer*/
-import footer from "@/views/footer";
+
 import axios from "axios";
 export default {
+  name:"login",
   data() {
     return {
       ruleForm: {
@@ -48,10 +47,7 @@ export default {
       footer_show: true
     };
   },
-  /*footer*/
-  components:{
-    'el-footer':footer,
-  },
+
   methods: {
     submitForm(formName) {
       const _this = this
@@ -76,10 +72,7 @@ export default {
     resetForm(formName) {
       this.$refs[formName].resetFields();
     },
-    /*footer*/
-    footer:function (bool){
-      this.footer_show = bool;
-    }
+
 
   }
 }
