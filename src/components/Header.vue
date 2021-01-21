@@ -5,7 +5,9 @@
 <!--标题及个人信息
 -->
       <div style="float: left">
-      <img src="../assets/logo2.png" style="height: 50px;">
+        <el-link href="/">
+          <img src="../assets/logo2.png" style="height: 50px;">
+        </el-link>
       </div>
 
     <div class="m-user-content">
@@ -38,6 +40,11 @@
       <div class="m-right">
 
         <span class="m-user-login">{{user.username}}</span>
+        <el-divider direction="vertical"></el-divider>
+      </div>
+      <div class="m-right">
+
+        <span class="m-user-login"><el-link type="danger" href="/blog/add">发表</el-link></span>
         <el-divider direction="vertical"></el-divider>
       </div>
     </div>

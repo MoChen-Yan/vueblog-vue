@@ -5,12 +5,17 @@ import store from './store'
 import Element from 'element-ui'
 import axios from 'axios'
 import "element-ui/lib/theme-chalk/index.css"
+import mavonEditor from 'mavon-editor'
 
 import "./axios"
+import "./permission"
+
+import 'mavon-editor/dist/css/index.css'
 
 Vue.use(Element)
-Vue.prototype.$axios = axios //
+Vue.use(mavonEditor)
 
+Vue.prototype.$axios = axios //
 Vue.config.productionTip = false
 
 new Vue({
