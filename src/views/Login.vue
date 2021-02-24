@@ -6,16 +6,23 @@
       </el-header>
       <el-main>
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-          <el-form-item label="账号:" prop="username">
+          <el-form-itlem label="账号:" prop="username">
             <el-input v-model="ruleForm.username"></el-input>
-          </el-form-item>
+          </el-form-itlem>
           <el-form-item label="密码:" prop="password">
             <el-input type="password" v-model="ruleForm.password"></el-input>
+          </el-form-item>
+          <el-form-item prop="validate">
+            <el-input v-model="ruleForm.validate" class="validate-code"
+            placeholder="验证码">
+            </el-input>
+
+
           </el-form-item>
 
           <el-form-item>
             <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
-            <el-button @click="resetForm('ruleForm')">重置</el-button>
+            <el-button @click="gotoRegister()">注册</el-button>
           </el-form-item>
         </el-form>
       </el-main>
@@ -69,6 +76,15 @@ export default {
       });
     },
 
+    gotoRegister(){
+      this.$router.push("/register");
+    },
+
+    refreshCode() {
+      this.identifyCode = "";
+      this.makeCode(this.identifyCodes, 4);
+    },
+
     resetForm(formName) {
       this.$refs[formName].resetFields();
     },
@@ -116,5 +132,16 @@ body > .el-container {
 .demo-ruleForm{
   max-width: 500px;
   margin: 0 auto;
+}
+.validate-code {
+  width: 136px;
+  float: left;
+}
+.code {
+  width: 112px;
+  height: 35px;
+  border: 1px solid #ccc;
+  float: right;
+  border-radius: 2px;
 }
 </style>
