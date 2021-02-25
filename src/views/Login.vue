@@ -6,19 +6,15 @@
       </el-header>
       <el-main>
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-          <el-form-itlem label="账号:" prop="username">
-            <el-input v-model="ruleForm.username"></el-input>
-          </el-form-itlem>
+
+          <el-form-item label="帐号:" prop="username">
+            <el-input  v-model="ruleForm.username"></el-input>
+          </el-form-item>
+
           <el-form-item label="密码:" prop="password">
             <el-input type="password" v-model="ruleForm.password"></el-input>
           </el-form-item>
-          <el-form-item prop="validate">
-            <el-input v-model="ruleForm.validate" class="validate-code"
-            placeholder="验证码">
-            </el-input>
 
-
-          </el-form-item>
 
           <el-form-item>
             <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>

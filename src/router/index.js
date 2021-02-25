@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/',
     name: 'Index',
-    redirect: { name: 'Blogs' }
+    component:() => import('../views/Index')
   },
   {
     path: '/login',
