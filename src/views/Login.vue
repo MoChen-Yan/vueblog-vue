@@ -62,7 +62,7 @@ export default {
             _this.$store.commit('SET_TOKEN', token)
             _this.$store.commit('SET_USERINFO', res.data.data)
             /*跳转*/
-            _this.$router.push("/blogs")
+            _this.$router.push("/index")
             console.log(res.data.data)
           })
         } else {

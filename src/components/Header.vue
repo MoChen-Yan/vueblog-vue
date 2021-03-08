@@ -60,13 +60,14 @@
         <img src="../assets/logo2.png" style="height: 50px;width: 138px">
       </el-link>
 
-    <div style="width: 550px;float:right;">
+    <div style="width: 600px;float:right;">
       <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" style="text-align: center;margin: 0 auto;">
+
 
         <el-menu-item index="1">{{user.username}}</el-menu-item>
         <el-menu-item index="2"><el-link type="primary" href="/index">首页</el-link></el-menu-item>
         <el-menu-item index="3"><el-link type="primary" href="/">我要挂售</el-link></el-menu-item>
-        <el-menu-item index="3"><el-link type="primary" href="/blogs">论坛中心</el-link></el-menu-item>
+        <el-menu-item index="4"><el-link type="primary" href="/blogs">论坛中心</el-link></el-menu-item>
         <el-submenu index="5">
           <template slot="title">个人中心</template>
           <el-menu-item index="5-1"><el-link type="primary" href="/">我的信息</el-link></el-menu-item>
@@ -86,6 +87,10 @@
         </el-submenu>
         <el-menu-item index="3" disabled>消息中心</el-menu-item>
         <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>-->
+        <el-menu-item index="6">
+          <span v-show="!hasLogin"><el-link type="primary" href="/login">登录</el-link></span>
+          <span v-show="hasLogin"><el-link type="primary" @click="logout">退出</el-link></span>
+        </el-menu-item>
         <el-avatar :size="50" :src="user.avatar" style="float: right"></el-avatar>
       </el-menu>
 
@@ -102,7 +107,8 @@ export default {
       user:{
         username:'请先登录',
         avatar:'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'
-      }
+      },
+      hasLogin: false
     }
   },
   methods: {

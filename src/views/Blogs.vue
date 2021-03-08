@@ -20,7 +20,7 @@
                    :page-size=pageSize
                    @current-change=page
                    :total="total">
-    </el-pagination>
+    </el-pagination>`
   </div>
 
 </template>

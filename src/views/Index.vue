@@ -30,10 +30,10 @@
 </template>
 
 <script>
-    import Header from "@/components/Header";
+    import Header from "../components/Header";
     export default {
         name: "index",
-        components: Header,
+        components: {Header},
         watch: {
             filterText(val) {
                 this.$refs.tree.filter(val);

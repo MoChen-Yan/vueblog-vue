@@ -29,7 +29,6 @@ export default new Vuex.Store({
     getUser: state => {
       return state.userInfo
     }
-
   },
   actions: {
   },

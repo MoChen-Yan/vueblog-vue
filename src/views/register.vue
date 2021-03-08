@@ -12,16 +12,8 @@
                     <el-input type="password" v-model="ruleForm.password"></el-input>
                 </el-form-item>
 
-                <el-form-item label="确认密码" prop="password1">
-                    <el-input type="password" v-model="ruleForm.password1"></el-input>
-                </el-form-item>
-
                 <el-form-item label="邮箱" prop="email">
                     <el-input v-model="ruleForm.email"></el-input>
-                </el-form-item>
-
-                <el-form-item label="地址" prop="address">
-                    <el-input v-model="ruleForm.address"></el-input>
                 </el-form-item>
 
                 <el-form-item>
@@ -46,9 +38,7 @@
                 ruleForm: {
                     username : '',
                     password : '',
-                    password1: '',
-                    email: '',
-                    address: ''
+                    email: ''
                 },
                 rules: {
                     username: [
@@ -58,9 +48,7 @@
                     password: [
                         { required: true, message: '请输入密码', trigger: 'change' }
                     ],
-                    password1: [
-                        { required: true, message: '请再次输入密码', trigger: 'change' }
-                    ],
+
                     email: [
                         { required: true, message: '请输入邮箱', trigger: 'change' }
                     ]
@@ -69,7 +57,7 @@
 
         },
 
-        methods{
+        methods:{
             submitForm(formName){
                 const _this = this
                 this.$refs[formName].validate((valid) => {

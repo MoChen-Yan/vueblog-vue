@@ -3,17 +3,28 @@ import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 import BlogDetail from '../views/BlogDetail.vue'
 import BlogEdit from '../views/BlogEdit.vue'
+import register from '../views/register.vue'
+import Index from '../views/Index.vue'
 Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
+    redirect: '/index'
+  },
+  {
+    path: '/index',
     name: 'Index',
-    component:() => import('../views/Index')
+    component: Index
   },
   {
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: register
   },
   {
     path: '/blogs',
